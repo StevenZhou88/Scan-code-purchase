@@ -1,1 +1,2 @@
-README.md
+下载后请使用npm i 安装依赖包 
+如果已有淘宝镜像 请使用 cnpm i -S 
