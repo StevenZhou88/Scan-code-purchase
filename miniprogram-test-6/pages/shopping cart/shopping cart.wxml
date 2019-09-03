@@ -1,0 +1,104 @@
+<!-- 商品信息 -->
+<view>
+<view class='commodity_title'>
+    <view style='margin-left:30rpx;font-size:14px;'>商品</view>
+    <view style='margin-right:30rpx;font-size:14px;'>编辑</view>
+</view>
+<block wx:for="{{ProductList}}" wx:key='{{item.id}}'>
+<view class='commodity'>
+    <view class='commodity_name'>{{item.Product.name}}</view>
+    <view class='commodity_price'>
+        <view style='color:red;'>¥{{item.Product.price}}</view>
+        <view style='margin-right:40rpx;display:flex;'><view style='width:40rpx;height:40rpx;border:1px solid gainsboro;border-radius:50%;text-align:center;line-height:34rpx;margin-right:15px;' bindtap='ChangeNum' data-type='dec' data-cart_id='{{item.id}}'>-</view>
+                  
+        <text style='margin-right:15px;'>{{item.number}}</text>
+
+                 <view style='width:40rpx;height:40rpx;border:1px solid gainsboro;border-radius:50%;text-align:center;line-height:34rpx;background-color:gainsboro;' bindtap='ChangeNum' data-type='inc' data-cart_id='{{item.id}}'>+</view></view>
+    </view>
+    
+</view>
+</block>
+</view>
+
+<!-- 购物袋 -->
+<view class='ShoppingBag'>
+  <view class='ShoppingBag_top'>购物袋</view>
+  <view class='ShoppingBag_buttom'>
+
+    <view class='ShoppingBag_buttom_left'>
+    <view style='flex:1;'> <image src='https://i.ibb.co/hMGTH6m/shopping-bag.png'></image></view>
+       
+        <view style='flex:2;display:flex;flex-direction: column;'>
+            <view style='margin-left:9px;margin-top:19px;font-size:30rpx;'>中号 ¥0.20</view>
+            <view style='display:flex;justify-content: space-around;'>
+
+                  <view style='width:100rpx;height:36rpx;border:1px solid gainsboro;border-radius:8px;text-align:center;line-height:36rpx;margin-top:10rpx;font-size:8px;margin-top:12rpx;' bindtap='ShoppingBag' data-code='4'>加入购物车</view>
+<!--                   
+        <text style='margin-top:10rpx;'>0</text>
+
+                 <view style='width:40rpx;height:40rpx;border:1px solid gainsboro;border-radius:50%;text-align:center;line-height:34rpx;background-color:gainsboro;margin-top:10rpx;' bindtap='ShoppingBag' data-cart_id='12' data-type='inc'>+</view> -->
+
+            </view>
+        </view> 
+    </view>
+
+
+    <view class='ShoppingBag_buttom_right'>
+    <view style='flex:1;'> <image src='https://i.ibb.co/hMGTH6m/shopping-bag.png'></image></view>
+       
+        <view style='flex:2;display:flex;flex-direction: column;'>
+            <view style='margin-left:9px;margin-top:19px;font-size:30rpx;'>大号 ¥0.30</view>
+            <view style='display:flex;justify-content: space-around;'>
+                  <view style='width:100rpx;height:36rpx;border:1px solid gainsboro;border-radius:8px;text-align:center;line-height:36rpx;margin-top:10rpx;font-size:8px;margin-top:12rpx;' bindtap='ShoppingBag' data-code='5'>加入购物车</view>
+                  
+        <!-- <text style='margin-top:10rpx;'>0</text>
+
+                 <view style='width:40rpx;height:40rpx;border:1px solid gainsboro;border-radius:50%;text-align:center;line-height:34rpx;background-color:gainsboro;margin-top:10rpx;'>+</view> -->
+
+            </view>
+        </view> 
+    </view>
+  </view>
+</view>
+
+<!-- 发票 -->
+<view class='Invoice'>
+  <view style='margin-left:20rpx;font-size:35rpx;'>发票</view>
+  <view style='margin-right:20rpx;font-size:30rpx;color:rgb(194, 189, 189);'>不要发票 ></view>
+</view>
+
+
+<!-- 优惠券 -->
+<view class='Coupon'> 
+   <view style='margin-left:20rpx;font-size:35rpx;'>优惠券</view>
+  <view style='margin-right:20rpx;font-size:30rpx;color:rgb(194, 189, 189);'>未使用优惠券 ></view>
+</view>
+
+
+<!-- 金额和优惠 -->
+<view class='Accounting'>
+    <view class='Accounting_Price'>
+        <view style='margin-left:20rpx;font-size:35rpx;'>商品金额</view>
+        <view style='margin-right:20rpx;font-size:30rpx;color:red'>¥ {{total}}</view>
+    </view>
+    <view class='Accounting_Preferential'>
+        <view style='margin-left:20rpx;font-size:35rpx;'>商品金额</view>
+        <view style='margin-right:20rpx;font-size:30rpx;color:#3675c9;'>-¥ 0.00</view>
+    </view>
+</view>
+
+
+<!-- 结算 -->
+<view class='Settlement'>
+    <view class='Settlement_box'>
+        <view style='flex:2;display:flex;align-items: center;justify-content:flex-end;'>
+              <view style='margin-right:40rpx;'>合计：<text style='color:red;'>¥ {{total}}</text></view>
+        </view>
+        <view style="flex:1;{{number==0?'background:gainsboro;':'background:#e79041;'}}display:flex;align-items: center;justify-content:center;" bindtap='toSettlement'>
+            <view style='color:#fff;font-size:20px;'>结算({{number}})</view>
+        </view>
+    </view>
+    <!-- <view class='FakeRound'></view> -->
+    <view class='FakeLine'></view>
+    <image src='https://i.ibb.co/VL9pGyF/image.png' bindtap='getQr'></image>
+</view>

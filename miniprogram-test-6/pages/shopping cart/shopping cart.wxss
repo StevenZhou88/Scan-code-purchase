@@ -1,0 +1,163 @@
+.ShoppingBag{
+  width: 100%;
+  height: 320rpx;
+  display: flex;
+  flex-direction: column;
+}
+.ShoppingBag .ShoppingBag_top{
+  width: 100%;
+  height: 300rpx;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+  font-size: 18px;
+}
+.ShoppingBag .ShoppingBag_buttom{
+  width: 100%;
+  height: 300rpx;
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+.ShoppingBag .ShoppingBag_buttom view{
+  height: 80%;
+  width: 80%;
+}
+.ShoppingBag_buttom_left{
+  border-right: 1px dotted gainsboro;
+  display: flex;
+}
+.ShoppingBag_buttom_right{
+  border-right: 1px dotted gainsboro;
+  display: flex;
+}
+.ShoppingBag_buttom_left image{
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+.ShoppingBag_buttom_right image{
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+
+/* 上面为购物袋css */
+
+
+
+.Invoice{
+  width: 100%;
+  height: 100rpx;
+  border: 20rpx solid rgb(243, 240, 240);border-left: none;border-right:none; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Coupon{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 20rpx solid rgb(243, 240, 240);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.Accounting{
+  width: 100%;
+  height: 170rpx;
+  display: flex;
+  flex-direction: column;
+}
+.Accounting_Price{
+  flex:1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Accounting_Preferential{
+  flex:1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.Settlement{
+  width: 100%;
+  height: 260rpx;
+  position: absolute;
+  bottom: 0;
+}
+.Settlement_box{
+  width: 100%;
+  height: 130rpx;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid gainsboro;
+  z-index: 1;
+  background: white;
+  display: flex;
+}
+.FakeRound{
+  width: 200rpx;
+  height: 200rpx;
+  border: 1px solid gainsboro;
+  border-radius: 50%;
+  position: absolute;
+  top:2px;
+  left:23px;
+}
+.FakeLine{
+  width: 200rpx;
+  height: 30px;
+  position: relative;
+  top:49px;
+  left:24px;
+  background-color: white;
+  z-index: 2;
+}
+.Settlement image{
+  width: 200rpx;
+  height: 200rpx;
+  position: absolute;
+  top:24rpx;
+  left:49rpx;
+  z-index: 3;
+}
+
+
+.commodity{
+  width: 100%;
+  height: 170rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid gainsboro;
+}
+.commodity .commodity_name{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+  font-size:15px;
+}
+.commodity .commodity_price{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+  justify-content:space-between;
+}
+.commodity_title{
+  width: 100%;
+  height: 80rpx;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

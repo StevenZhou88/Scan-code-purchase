@@ -1,0 +1,38 @@
+<!-- 发票 -->
+<view class='Invoice'>
+  <view style='margin-left:20rpx;font-size:35rpx;'>发票</view>
+  <view style='margin-right:20rpx;font-size:30rpx;color:rgb(194, 189, 189);'>不要发票 ></view>
+</view>
+
+<!-- 商品信息 -->
+<block wx:for='{{ProductList}}' wx:key='item.id'>
+<view class='commodity'>
+    <view class='commodity_name'>{{item.Product.name}}</view>
+    <view class='commodity_price'>
+        <view>¥ {{item.Product.price}}</view>
+        <view style='margin-right:40rpx;'>*{{item.number}}</view>
+    </view>
+</view>
+</block>
+
+<!-- 商品金额和优惠 -->
+<view class='Accounting'>
+    <view class='Accounting_Price'>
+        <view style='margin-left:20rpx;font-size:35rpx;'>商品金额</view>
+        <view style='margin-right:20rpx;font-size:30rpx;color:red'>¥ {{total}}</view>
+    </view>
+    <view class='Accounting_Preferential'>
+        <view style='margin-left:20rpx;font-size:35rpx;'>商品金额</view>
+        <view style='margin-right:20rpx;font-size:30rpx;color:#3675c9;'>-¥ 0.00</view>
+    </view>
+</view>
+
+<!-- 结算的按钮 -->
+<view class='Settlement_box'>
+        <view style='flex:2;display:flex;align-items: center;justify-content:flex-end;'>
+              <view style='margin-right:40rpx;'>合计：<text style='color:red;'>¥ {{total}}</text></view>
+        </view>
+        <view style='flex:1;background:#e98e40;display:flex;align-items: center;justify-content:center;'>
+            <view style='color:#fff;font-size:20px;' bindtap='tenPay'>支付({{number}})</view>
+        </view>
+    </view>
